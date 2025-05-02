@@ -1,0 +1,15 @@
+# Node
+node_modules/
+npm-debug.log
+
+# Prisma
+.prisma/
+.env
+
+# Docker
+docker/postgres-data/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
