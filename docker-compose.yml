@@ -1,16 +1,21 @@
+version: "3.8"
+
 services:
   postgres:
-    image: postgres:16
+    image: postgres:15
     container_name: botverse-postgres
     restart: always
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
+    env_file:
+      - .env
 
-    # ⚠️ Проброс порта нужен только для локальной разработки.
-    # В проде удалить "5432:5432", чтобы не открывать базу наружу!
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
     ports:
-      - "5432:5432"
+      - "6432:5432"
     volumes:
-      - ./docker/postgres-data:/var/lib/postgresql/data
+      - botverse_data:/var/lib/postgresql/data
+
+volumes:
+  botverse_data:

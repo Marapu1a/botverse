@@ -1,15 +1,43 @@
-# Node
+# Node.js
 node_modules/
-npm-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+.build/
+.cache/
+
+# TypeScript
+*.tsbuildinfo
+
+# Env
+.env
+.env.local
+.env.*
 
 # Prisma
-.prisma/
-.env
+prisma/dev.db
+prisma/migrations/
+
+# Logs
+logs/
+*.log
 
 # Docker
-docker/postgres-data/
+docker/*.log
+docker-compose.override.yml
 
-# IDE
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
 .vscode/
 .idea/
-.DS_Store
+*.sw?
+
+# Other
+coverage/
+*.sqlite
+*.bak
